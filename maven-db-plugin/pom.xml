@@ -8,7 +8,7 @@
 	 | Basic project information
 	 +-->
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.google.com</groupId>
+	<groupId>com.googlecode</groupId>
 	<version>1.2-SNAPSHOT</version>
 	<artifactId>maven-db-plugin</artifactId>
 	<name>maven database plugin</name>
