@@ -1,4 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://maven.apache.org/POM/4.0.0 
+        http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<!-- 
 	 | Basic project information
@@ -11,6 +15,44 @@
 	<packaging>maven-plugin</packaging>
 	<url>http://code.google.com/p/maven-db-plugin/</url>
 	
+	<!--
+     | Developers on the project
+     +-->
+	<developers>
+		<developer>
+			<email>brian.dilley@gmail.com</email>
+			<id>brian.dilley</id>
+			<name>Brian Dilley</name>
+		</developer>
+	</developers>
+
+	<!--
+     | scm configuration
+     +-->
+	<scm>
+		<connection>scm:svn:http://maven-db-plugin.googlecode.com/svn/trunk/maven-db-plugin/</connection>
+		<developerConnection>scm:svn:https://maven-db-plugin.googlecode.com/svn/trunk/maven-db-plugin/</developerConnection>
+		<url>http://maven-db-plugin.googlecode.com/svn/trunk/maven-db-plugin/</url>
+	</scm>
+
+	<!--
+	 | distribution (deployment) configuration
+	 +-->
+	<distributionManagement>
+		<repository>
+			<id>maven-db-plugin-webdav-maven-repo</id>
+			<name>maven-db-plugin maven repository</name>
+			<url>dav:https://maven-db-plugin.googlecode.com/svn/maven/repo/</url>
+			<uniqueVersion>false</uniqueVersion>
+			<layout>default</layout>
+		</repository>
+		<!-- <site>
+			<id>maven-db-plugin-webdav-maven-repo</id>
+			<name>maven-db-plugin4j site server</name>
+			<url>dav:https://maven-db-plugin.googlecode.com/svn/maven/site/</url>
+		</site> -->
+	</distributionManagement>
+
 	<!--
 	 | build configuration
 	 +-->
