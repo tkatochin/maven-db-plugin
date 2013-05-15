@@ -5,7 +5,7 @@
 	 +-->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.googlecode</groupId>
-	<version>1.4</version>
+	<version>1.5-SNAPSHOT</version>
 	<artifactId>maven-db-plugin</artifactId>
 	<name>maven database plugin</name>
 	<packaging>maven-plugin</packaging>
@@ -26,9 +26,9 @@
      | scm configuration
      +-->
 	<scm>
-		<connection>scm:svn:http://maven-db-plugin.googlecode.com/svn/tags/maven-db-plugin-1.4</connection>
-		<developerConnection>scm:svn:https://maven-db-plugin.googlecode.com/svn/tags/maven-db-plugin-1.4</developerConnection>
-		<url>http://maven-db-plugin.googlecode.com/svn/tags/maven-db-plugin-1.4</url>
+		<connection>scm:svn:http://maven-db-plugin.googlecode.com/svn/trunk/maven-db-plugin/</connection>
+		<developerConnection>scm:svn:https://maven-db-plugin.googlecode.com/svn/trunk/maven-db-plugin/</developerConnection>
+		<url>http://maven-db-plugin.googlecode.com/svn/trunk/maven-db-plugin/</url>
 	</scm>
 
 	<!--
