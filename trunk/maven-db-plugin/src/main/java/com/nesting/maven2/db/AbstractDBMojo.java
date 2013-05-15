@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.charset.Charset;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -76,6 +77,12 @@ public abstract class AbstractDBMojo
      * @required
      */
     private String sqlDelimiter;
+
+    /**
+	 * Charset for sql script files.
+	 * @parameter
+	 */
+	private String scriptEncoding;
     
     /**
      * Child mojos need to implement this.
@@ -223,10 +230,13 @@ public abstract class AbstractDBMojo
         if (file.getName().toUpperCase().endsWith("GZ")) {
             ips = new GZIPInputStream(ips);
         }
+
+        // check encoding
+        checkEncoding();
         
         // our file reader
         Reader reader;
-        reader = new InputStreamReader(ips);
+        reader = new InputStreamReader(ips, scriptEncoding);
         
         // create SQL Statement
         Statement st = con.createStatement();
@@ -313,10 +323,13 @@ public abstract class AbstractDBMojo
             ips = new GZIPInputStream(ips);
             getLog().info(" file is gz compressed, using gzip stream");
         }
+ 
+        // check encoding
+        checkEncoding();
         
         // our file reader
         Reader reader;
-        reader = new InputStreamReader(ips);
+        reader = new InputStreamReader(ips, scriptEncoding);
         
         // create SQL Statement
         Statement st = con.createStatement();
@@ -517,6 +530,15 @@ public abstract class AbstractDBMojo
         // we're good :)
         return con;
     }
+
+	private void checkEncoding() {
+		if (scriptEncoding == null) {
+			scriptEncoding = Charset.defaultCharset().name();
+			getLog().warn("Using platform encoding (" + scriptEncoding + ") for executing script, i.e. build is platform dependent!");
+		} else {
+			getLog().info(" setting encoding for executing script: " + scriptEncoding);
+		}
+	}
 }
 
 
