@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metadata xsi:schemaLocation="http://maven.apache.org/METADATA/1.0.0 http://maven.apache.org/xsd/metadata-1.0.0.xsd" xmlns="http://maven.apache.org/METADATA/1.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<metadata>
   <groupId>com.googlecode</groupId>
   <artifactId>maven-db-plugin</artifactId>
   <versioning>
-    <latest>1.4-SNAPSHOT</latest>
-    <release>1.3</release>
+    <latest>1.4</latest>
+    <release>1.4</release>
     <versions>
       <version>1.2-SNAPSHOT</version>
       <version>1.3</version>
       <version>1.4-SNAPSHOT</version>
+      <version>1.4</version>
     </versions>
-    <lastUpdated>20111109230634</lastUpdated>
+    <lastUpdated>20130515175843</lastUpdated>
   </versioning>
 </metadata>
